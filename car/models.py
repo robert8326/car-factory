@@ -61,6 +61,18 @@ class CarPart(models.Model):
     car = models.ForeignKey('Car', verbose_name='Машина', related_name='car_parts', on_delete=models.CASCADE)
     quantity = models.IntegerField(verbose_name='Количества детали')
 
+    def get_part_id(self):
+        return self.part.id
+
+    def get_part_name(self):
+        return self.part.name
+
+    def get_part_price(self):
+        return self.part.price
+
+    def get_part_percent(self):
+        return self.part.percent
+
 
 class Result(models.Model):
     """ Результаты машин """
